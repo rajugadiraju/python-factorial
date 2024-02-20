@@ -17,12 +17,12 @@ def lambda_handler(event, context):
         if not num_str.isdigit():
             response = {
                 "statusCode": 400,
-                "body": json.dumps("Please provide a valid integer in the 'num' field.")
+                "body": json.dumps("Please give a valid integer in the 'num' field.")
             }
         elif num < 0:
             response = {
                 "statusCode": 400,
-                "body": json.dumps("Please provide a positive integer in the 'num' field.")
+                "body": json.dumps("Please give a positive integer in the 'num' field.")
             }
         else:
             result = factorial(num)
@@ -33,7 +33,7 @@ def lambda_handler(event, context):
     except (KeyError, ValueError):
         response = {
             "statusCode": 400,
-            "body": json.dumps("Invalid input. Please provide a valid integer in the 'num' field.")
+            "body": json.dumps("Invalid input. Please give a valid integer in the 'num' field.")
         }
     
     return response
